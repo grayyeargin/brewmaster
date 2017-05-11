@@ -1,0 +1,17 @@
+{
+  "name": "brewmaster",
+  "version": "1.0.0",
+  "description": "An application for beer brewing and beer information",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Gray Yeargin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.8",
+    "mongoose-createdmodified": "0.0.2"
+  }
+}
