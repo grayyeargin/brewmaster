@@ -1,24 +1,51 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
+// BREWERY MODEL
+const Brewery = require('../models/brewery')
+
+// ALL
 router.get('/', function (req, res) {
-	res.json({ message: 'breweries!' });
+	Brewery.find({}, '', function(err, results) {
+		res.json(results)
+	})
 })
 
+
+// SINGLE
 router.get('/:brewery_id', function (req, res) {
-	
+	Brewery.findOne({ _id: req.params.brewery_id }, function(err, results) {
+		if (err) res.json(err)
+		res.json(results)
+	})
 })
 
-router.post('/brewery', function (req, res) {
-	
+
+// CREATE
+router.post('/', function (req, res) {
+	Brewery.create({
+
+	}, function (err, result) {
+		if (err) res.json(err)
+		res.send(201)
+	})
 })
 
-router.put('/brewery', function (req, res) {
-	
+
+// UPDATE
+router.put('/:brewery_id', function (req, res) {
+	// Brewery.findOneAndUpdate({ _id: req.params.brewery_id }, {
+
+	// })
 })
 
-router.delete('/brewery/:brewery_id', function (req, res) {
-	
+
+// DELETE
+router.delete('/:brewery_id', function (req, res) {
+	Brewery.deleteOne({ _id: req.params.brewery_id }, function(err, results) {
+		if (err) res.json(err)
+		res.send(201)
+	})
 })
 
 module.exports = router

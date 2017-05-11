@@ -10,14 +10,18 @@ const BrewerySchema = new mongoose.Schema({
     location: String,
     webpage: String,
     logoImg: String,
-    beers: Array,
+    beers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Beer' }],
     phone: String,
     address: String,
     longitude: Number,
-    latitude: Number
+    latitude: Number,
+    liked: Number,
+    rating: Number,
+    admins: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
 });
 
-Brewery.plugin(createdModified, { index: true })
+BrewerySchema.plugin(createdModified, { index: true })
 
 const Brewery = mongoose.model('Brewery', BrewerySchema)
 module.exports = Brewery
