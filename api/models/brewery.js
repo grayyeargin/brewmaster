@@ -16,7 +16,7 @@ const BrewerySchema = new mongoose.Schema({
     longitude: Number,
     latitude: Number,
     liked: Number,
-    rating: Number,
+    unliked: Number,
     admins: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
 });

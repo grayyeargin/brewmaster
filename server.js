@@ -32,7 +32,7 @@ router.use('/brewery', require ('./api/routes/brewery'));
 router.use('/beer', require ('./api/routes/beer'));
 
 // REGISTER OUR ROUTES -------------------------------
-// all of our routes will be prefixed with /api
+// all routes will be prefixed with /api
 app.use('/api', router);
 
 // START THE SERVER

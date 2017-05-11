@@ -13,7 +13,7 @@ const BeerSchema = new mongoose.Schema({
     abv: Number,
     description: String,
     liked: Number,
-    rating: Number,
+    unliked: Number,
     admins: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
 });
