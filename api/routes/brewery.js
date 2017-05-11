@@ -34,9 +34,9 @@ router.post('/', function (req, res) {
 
 // UPDATE
 router.put('/:brewery_id', function (req, res) {
-	// Brewery.findOneAndUpdate({ _id: req.params.brewery_id }, {
-
-	// })
+	Brewery.findOneAndUpdate({ _id: req.params.brewery_id }, {
+		
+	})
 })
 
 
