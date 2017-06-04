@@ -1,0 +1,13 @@
+@import "ember-bootstrap/bootstrap";
+
+@import 'sass/variables';
+@import 'sass/mixins';
+@import 'sass/utility';
+
+
+// PAGES 
+@import 'sass/home';
+
+body {
+	background: chartreuse;
+}

@@ -1,0 +1,23 @@
+
+// MEDIA QUERY MIXINS
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tabletAndAbove {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+
+@mixin tabletOnly {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
