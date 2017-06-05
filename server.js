@@ -17,6 +17,13 @@ mongoose.connect(config.db.uri);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Allow CORS
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 // ROUTES FOR OUR API
 // =============================================================================
@@ -28,8 +35,8 @@ router.get('/', function(req, res) {
 });
 
 // REQUIRE ROUTES
-router.use('/brewery', require ('./api/routes/brewery'));
-router.use('/beer', require ('./api/routes/beer'));
+router.use('/breweries', require ('./api/routes/brewery'));
+router.use('/beers', require ('./api/routes/beer'));
 
 // REGISTER OUR ROUTES -------------------------------
 // all routes will be prefixed with /api
