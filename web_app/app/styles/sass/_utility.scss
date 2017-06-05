@@ -4,3 +4,30 @@
   background-position: center top;
   background-size: cover;
 }
+
+.full-height {
+	min-height: 100vh;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.box-card {
+	border: 1px solid #fff;
+	padding: 5px;
+}
+
+.btn {
+	border-radius: 0px;
+}
+
+.btn-white {
+	color: #fff;
+	border-color: #fff;
+
+	&:hover {
+		color: #bdc3c7;
+		border-color: #bdc3c7;
+	}
+}

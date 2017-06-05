@@ -2,12 +2,15 @@
 
 @import 'sass/variables';
 @import 'sass/mixins';
+@import 'sass/keyframes';
 @import 'sass/utility';
+@import 'sass/font';
 
 
 // PAGES 
 @import 'sass/home';
 
 body {
-	background: chartreuse;
+	background: #000;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, Arial, "Helvetica Neue", sans-serif;
 }
