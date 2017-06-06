@@ -9,6 +9,7 @@ var app        = express();
 var bodyParser = require('body-parser');
 var config     = require('./config');
 var mongoose   = require('mongoose');
+mongoose.Promise = global.Promise;
 
 // Connect to db
 mongoose.connect(config.db.uri);

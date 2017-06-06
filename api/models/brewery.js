@@ -8,6 +8,7 @@ const BrewerySchema = new mongoose.Schema({
         trim: true,
     },
     country: String,
+    city: String,
     webpage: String,
     logoImg: String,
     state: String,

@@ -15,8 +15,8 @@ const BeerSchema = new mongoose.Schema({
     ibu: Number,
     calories: Number,
     description: String,
-    liked: Number,
-    unliked: Number,
+    liked: {type: Number, default: 0},
+    unliked: {type: Number, default: 0},
     admins: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
 });

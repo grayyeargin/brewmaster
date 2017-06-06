@@ -11,9 +11,9 @@
   	{{#each breweries as |brewery|}}
 			<tr>
 	      <td scope="row">{{brewery.name}}</td>
-	      <td>Mark</td>
-	      <td>Otto</td>
-	      <td>@mdo</td>
+	      <td>{{brewery.state}}</td>
+	      <td>{{brewery.beerCnt}}</td>
+	      <td>{{brewery.ratingPct}}</td>
 	    </tr>
 		{{/each}}
 
