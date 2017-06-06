@@ -1,0 +1,23 @@
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Beers</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{{#each breweries as |brewery|}}
+			<tr>
+	      <td scope="row">{{brewery.name}}</td>
+	      <td>Mark</td>
+	      <td>Otto</td>
+	      <td>@mdo</td>
+	    </tr>
+		{{/each}}
+
+	</tbody>
+</table>
+
+{{yield}}

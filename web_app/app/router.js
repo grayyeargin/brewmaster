@@ -8,6 +8,8 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('breweries');
+
+  this.route('breweries/state')
 });
 
 export default Router;

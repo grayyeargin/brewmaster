@@ -10,19 +10,27 @@ export default Ember.Component.extend({
 	},
 
 	mapWidth: null,
+	scale: null,
+
+	stateClick(e) {
+		debugger;
+	},
 	
 	// Sets mapWidth value to use in sizing initial map and on window resize
 	setMapWidth() {
 		let windowWidth = window.innerWidth;
 		switch(true) {
 			case windowWidth >= 1200:
-				this.mapWidth = 960;
+				this.mapWidth = 950;
+				this.scale = 950;
 				return;
 			case windowWidth >= 992:
-				this.mapWidth = 700;
+				this.mapWidth = 850;
+				this.scale = 850;
 				return;
 			default:
-				this.mapWidth = 500;
+				this.mapWidth = 670;
+				this.scale = 670;
 				return;
 		}
 	},
@@ -30,11 +38,12 @@ export default Ember.Component.extend({
 	// Draws the map of US
 	drawMap() {
 		let width = this.mapWidth,
-				height = 500;
+				height = width / 2,
+				scale = this.scale;
 
 		let projection = d3.geoAlbers()
 				   .translate([width/2, height/2])    // translate to center of screen
-				   .scale([900]);          // scale things down so see entire US
+				   .scale([scale]);          // scale things down so see entire US
         
 		// Define path generator
 		let path = d3.geoPath()               // path generator that will convert GeoJSON to SVG paths
@@ -57,6 +66,11 @@ export default Ember.Component.extend({
 				.attr("d", path)
 				.style("stroke", "#fff")
 				.style("stroke-width", "1")
+				.on("click", function(){
+					let stateName = this.__data__.properties.name;
+					window.location = 'breweries/state?state=' + stateName;
+					console.log(stateName);
+				})
 
 		});
 

@@ -6,7 +6,7 @@ const Brewery = require('../models/brewery')
 
 // ALL
 router.get('/', function (req, res) {
-	Brewery.find({}, '', function(err, breweries) {
+	Brewery.find(req.query, '', function(err, breweries) {
 		res.json(breweries)
 	})
 })

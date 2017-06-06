@@ -1,7 +1,10 @@
 <div class="brewery-page">
 	<div class="container">
-		<h1>Brewz</h1>
+		<h2 class="text-center">Explore By State</h2>
 		{{#us-map}}{{/us-map}}
+		{{#each model as |brewery|}}
+			<h6>{{brewery.name}}</h6>
+		{{/each}}
 	</div>
 </div>
 {{outlet}}
