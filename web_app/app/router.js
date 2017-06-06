@@ -9,6 +9,8 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('breweries');
 
+  this.route('breweries/brewery', { path: '/breweries/:brewery_id' })
+
   this.route('breweries/state')
 });
 

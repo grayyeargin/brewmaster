@@ -9,6 +9,7 @@ export default DS.Model.extend({
 	city: DS.attr('string'),
 	country: DS.attr('string'),
 	address: DS.attr('string'),
+	phone: DS.attr('string'),
 
 
 	// Computed properties

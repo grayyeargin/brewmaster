@@ -10,7 +10,11 @@
   <tbody>
   	{{#each breweries as |brewery|}}
 			<tr>
-	      <td scope="row">{{brewery.name}}</td>
+	      <td scope="row">
+          {{#link-to "breweries/brewery" brewery}}
+            {{brewery.name}}
+          {{/link-to}}
+        </td>
 	      <td>{{brewery.state}}</td>
 	      <td>{{brewery.beerCnt}}</td>
 	      <td>{{brewery.ratingPct}}</td>
