@@ -1,0 +1,16 @@
+.brewery-page {
+	
+	svg {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.states {
+		fill: #2980b9;
+
+		&:hover {
+				fill: red;
+		}
+	}
+	
+}
