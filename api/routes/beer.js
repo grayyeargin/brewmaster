@@ -6,9 +6,13 @@ const Beer = require('../models/beer')
 
 // ALL
 router.get('/', function (req, res) {
-	Beer.find({}, '', function(err, results) {
-		res.json(results)
-	})
+	Beer.find(req.query)
+		.populate('_brewery', 'name')
+		// .limit(100)
+		.exec(function(err, beers) {
+			if (err) res.json(err)
+			res.json(beers)
+		})
 })
 
 

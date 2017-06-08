@@ -1,0 +1,31 @@
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brewery</th>
+      <th>Style</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{{#each beers as |beer|}}
+			<tr>
+	      <td scope="row">
+          {{#link-to "beers/beer" beer}}
+            {{beer.name}}
+          {{/link-to}}
+        </td>
+	      <td>
+					{{#link-to "breweries/brewery" beer.brewery}}
+            {{beer.brewery.name}}
+          {{/link-to}}
+	      </td>
+	      <td>{{beer.style}}</td>
+	      <td>{{beer.ratingPct}}</td>
+	    </tr>
+		{{/each}}
+
+	</tbody>
+</table>
+
+{{yield}}
