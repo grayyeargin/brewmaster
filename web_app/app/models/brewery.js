@@ -3,7 +3,7 @@ import DS from 'ember-data';
 export default DS.Model.extend({
 	name: DS.attr('string'),
 	state: DS.attr('string'),
-	beers: DS.attr(),
+	beers: DS.hasMany('beer'),
 	liked: DS.attr(),
 	unliked: DS.attr(),
 	city: DS.attr('string'),

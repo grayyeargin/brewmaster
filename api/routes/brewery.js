@@ -17,10 +17,12 @@ router.get('/', function (req, res) {
 
 // SINGLE
 router.get('/:brewery_id', function (req, res) {
-	Brewery.findOne({ _id: req.params.brewery_id }, function(err, results) {
-		if (err) res.json(err)
-		res.json(results)
-	})
+	Brewery.findOne({ _id: req.params.brewery_id })
+		.populate('beers')
+		.exec(function(err, results) {
+			if (err) res.json(err)
+			res.json(results)
+		})
 })
 
 

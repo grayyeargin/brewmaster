@@ -1,5 +1,4 @@
 .brewery-page {
-	
 	svg {
 		display: block;
 		margin: 0 auto;
@@ -14,4 +13,9 @@
 		}
 	}
 
+	.brewery-background {
+		background-image: url('/images/beer-background.jpg');
+		padding: 30px 15px;
+		color: #fff;
+	}
 }
