@@ -13,9 +13,10 @@
 		}
 	}
 
-	.brewery-background {
+	.brewery-background, .state-background {
 		background-image: url('/images/beer-background.jpg');
 		padding: 30px 15px;
 		color: #fff;
+		margin-bottom: 15px;
 	}
 }

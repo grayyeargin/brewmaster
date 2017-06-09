@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model() {
-    return this.get('store').findAll('brewery', {});
+		return Ember.RSVP.hash({
+    	breweries: this.get('store').findAll('brewery', {})
+    })
   }
 });

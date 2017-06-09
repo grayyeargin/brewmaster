@@ -15,8 +15,7 @@ export default DS.Model.extend({
 	// Computed properties
 	beerCnt: Ember.computed('beers', function() {
 		let beerProp = this.get('beers')
-
-		return beerProp.length
+		return beerProp.content.length
 	}).readOnly(),
 
 	ratingPct: Ember.computed('liked', 'unliked', function() {

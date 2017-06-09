@@ -1,10 +1,25 @@
 <div class="brewery-page">
-	<div class="container">
-		<h2 class="text-center">Explore By State</h2>
-		{{#us-map}}{{/us-map}}
-		{{#each model as |brewery|}}
-			<h6>{{brewery.name}}</h6>
-		{{/each}}
+	
+	<div class="map-row">
+		<div class="container">
+			<h2 class="text-center">Explore By State</h2>
+			{{#us-map}}{{/us-map}}
+			{{!-- {{#each model as |brewery|}}
+				<h6>{{brewery.name}}</h6>
+			{{/each}} --}}
+		</div>
 	</div>
+
+	<div class="top-table">
+		<div class="container">
+			<h2>Top 10 Breweries</h2>
+			{{breweries/brewery-table breweries=topBreweries}}
+		</div>
+	</div>
+
+	<div class="news-row">
+		{{!-- News stuff here --}}
+	</div>
+
 </div>
 {{outlet}}
