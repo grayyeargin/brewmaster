@@ -10,15 +10,25 @@
 		</div>
 	</div>
 
+	<div class="news-row">
+		<div class="container">
+			<h2>Brewery News</h2>
+			<div class="row">
+				{{#each model.news as |article|}}
+					<div class="col-12 col-md-4">
+						{{breweries/news-card article=article}}
+					</div>
+				{{/each}}
+			</div>
+		</div>
+		{{!-- News stuff here --}}
+	</div>
+
 	<div class="top-table">
 		<div class="container">
 			<h2>Top 10 Breweries</h2>
 			{{breweries/brewery-table breweries=topBreweries}}
 		</div>
-	</div>
-
-	<div class="news-row">
-		{{!-- News stuff here --}}
 	</div>
 
 </div>
