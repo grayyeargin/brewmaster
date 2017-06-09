@@ -38,6 +38,7 @@ router.get('/', function(req, res) {
 // REQUIRE ROUTES
 router.use('/breweries', require ('./api/routes/brewery'));
 router.use('/beers', require ('./api/routes/beer'));
+router.use('/news', require ('./api/routes/news'));
 
 // REGISTER OUR ROUTES -------------------------------
 // all routes will be prefixed with /api
