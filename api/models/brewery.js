@@ -1,6 +1,8 @@
 const mongoose = require('mongoose'),
 			createdModified = require('mongoose-createdmodified').createdModifiedPlugin
 
+const deepPopulate = require('mongoose-deep-populate')(mongoose);
+
 const BrewerySchema = new mongoose.Schema({
     name: {
         type: String,
@@ -24,6 +26,7 @@ const BrewerySchema = new mongoose.Schema({
 });
 
 BrewerySchema.plugin(createdModified, { index: true })
+BrewerySchema.plugin(deepPopulate, {});
 
 const Brewery = mongoose.model('Brewery', BrewerySchema)
 module.exports = Brewery

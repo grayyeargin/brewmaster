@@ -8,8 +8,8 @@ const Beer = require('../models/beer')
 router.get('/', function (req, res) {
 	Beer.find(req.query)
 		.populate('_brewery', 'name')
-		.populate('style')
-		// .limit(100)
+		.populate('style', 'name')
+		.limit(100)
 		.exec(function(err, beers) {
 			if (err) res.json(err)
 			res.json(beers)

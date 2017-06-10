@@ -4,7 +4,7 @@ export default DS.Model.extend({
 	name: DS.attr('string'),
 	logoImg: DS.attr(),
 	brewery: DS.belongsTo('brewery'),
-	style: DS.attr('string'),
+	style: DS.belongsTo('style'),
 	abv: DS.attr('string'),
 	ibu: DS.attr('number'),
 	calories: DS.attr('number'),

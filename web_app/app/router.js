@@ -15,6 +15,7 @@ Router.map(function() {
   // Beer routes
   this.route('beers');
   this.route('beers/beer', { path: '/beers/:beer_id' });
+  this.route('beers/style', { path: '/styles/:style_id' });
 });
 
 export default Router;

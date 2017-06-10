@@ -20,7 +20,11 @@
             {{beer.brewery.name}}
           {{/link-to}}
 	      </td>
-	      <td>{{beer.style}}</td>
+	      <td>
+          {{#link-to "beers/style" beer.style}}
+            {{beer.style.name}}
+          {{/link-to}}
+        </td>
 	      <td>{{beer.ratingPct}}</td>
 	    </tr>
 		{{/each}}
