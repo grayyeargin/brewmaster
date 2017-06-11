@@ -16,8 +16,8 @@
           {{/link-to}}
         </td>
 	      <td>
-					{{#link-to "breweries/brewery" beer.brewery}}
-            {{beer.brewery.name}}
+					{{#link-to "breweries/brewery" beer._brewery}}
+            {{beer._brewery.name}}
           {{/link-to}}
 	      </td>
 	      <td>
@@ -33,3 +33,4 @@
 </table>
 
 {{yield}}
+{{log beers}}

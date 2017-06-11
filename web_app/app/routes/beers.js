@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model() {
-    return this.get('store').findAll('beer', {});
+    return this.get('store').query('beer', {
+    	limit: 50
+    });
   }
 });

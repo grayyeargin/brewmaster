@@ -1,7 +1,36 @@
-<div class="single-beer">
-	<div class="container">
-		<h1>{{model.name}}</h1>
+<div class="beer-page">
+	<div class="page-row style-background">
+		<div class="container">
+			<h1>{{model.name}}</h1>
+			<div class="brewery-link">
+				{{#link-to "breweries/brewery" model._brewery}}
+            {{model._brewery.name}}
+        {{/link-to}}
+			</div>
+			<div class="beer-info">
+				{{#if model.ibu}}<span>IBU: {{model.ibu}}</span>{{/if}}
+				{{#if model.calories}}<span>CALORIES: {{model.calories}}</span>{{/if}}
+				{{#if model.abv}}<span>ABV: {{model.abv}}</span>{{/if}}
+				{{#if model.style}}
+					<span>
+						STYLE: {{#link-to "beers/style" model.style}}
+            	{{model.style.name}}
+          	{{/link-to}}
+          </span>
+        {{/if}}
+			</div>
+		</div>
 	</div>
+
+	{{#if model.description}}
+		<div class="page-row">
+			<div class="container">
+				<h3>Description</h3>
+				{{model.description}}
+			</div>
+		</div>
+	{{/if}}
+
 </div>
 
 {{outlet}}

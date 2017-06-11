@@ -1,6 +1,20 @@
-<div class="single-beer">
-	<div class="container">
-		<h1>{{model.name}}</h1>
+<div class="beer-page">
+	<div class="page-row style-background">
+		<div class="container">
+			<h1>{{model.style.name}}</h1>
+		</div>
+	</div>
+	<div class="page-row">
+		<div class="container">
+			<h3>Description</h3>
+			<div>{{model.style.description}}</div>
+		</div>
+	</div>
+	<div class="page-row grey-background">
+		<div class="container">
+			<h3>Top {{model.style.name}}</h3>
+			{{beers/beer-table beers=model.beers}}
+		</div>
 	</div>
 </div>
 
