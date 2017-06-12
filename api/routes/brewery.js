@@ -7,7 +7,7 @@ const Brewery = require('../models/brewery')
 // ALL
 router.get('/', function (req, res) {
 	Brewery.find(req.query)
-		.deepPopulate('beers.style')
+		// .deepPopulate(['beers.style'])
 		.exec(function(err, breweries) {
 			if (err) res.json(err)
 			res.json(breweries)
@@ -18,7 +18,7 @@ router.get('/', function (req, res) {
 // SINGLE
 router.get('/:brewery_id', function (req, res) {
 	Brewery.findOne({ _id: req.params.brewery_id })
-		.deepPopulate('beers.style')
+		// .deepPopulate('beers.style')
 		.exec(function(err, results) {
 			if (err) res.json(err)
 			res.json(results)

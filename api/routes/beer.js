@@ -10,7 +10,8 @@ router.get('/', function (req, res) {
 		// Conditionally add query parameters
 		if (req.query.style) queryObj.style = req.query.style;
 
-	let q = Beer.find(queryObj).populate('_brewery', 'name').populate('style', 'name')
+	let q = Beer.find(queryObj)
+		// .populate('_brewery', 'name').populate('style', 'name')
 		
 		if (req.query.limit) q = q.limit(req.query.limit);
 
@@ -24,8 +25,8 @@ router.get('/', function (req, res) {
 // SINGLE
 router.get('/:beer_id', function (req, res) {
 	Beer.findOne({ _id: req.params.beer_id})
-		.populate('_brewery', 'name')
-		.populate('style', 'name')
+		// .populate('_brewery', 'name')
+		// .populate('style', 'name')
 		.exec(function(err, results) {
 			if (err) res.json(err)
 			res.json(results)
