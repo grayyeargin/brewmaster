@@ -1,8 +1,10 @@
 <div class="brewery-page">
-	<div class="container">
 
-		{{beers/beer-table beers=model}}
-
+	<div class="top-table-row">
+		<div class="container">
+			<h2>Top 10 Beers</h2>
+			{{beers/beer-table beers=topBeers}}
+		</div>
 	</div>
 </div>
 {{outlet}}

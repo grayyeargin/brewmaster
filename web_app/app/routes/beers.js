@@ -2,8 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model() {
-    return this.get('store').query('beer', {
-    	limit: 50
-    });
+		return Ember.RSVP.hash({
+    	beers: this.get('store').query('beer', {
+    		limit: 50
+    	})
+    })
   }
 });
