@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import * as d3 from 'd3';
-import topojson from 'npm:topojson';
 
 export default Ember.Component.extend({
 	didInsertElement() {
@@ -11,10 +10,6 @@ export default Ember.Component.extend({
 
 	mapWidth: null,
 	scale: null,
-
-	stateClick(e) {
-		debugger;
-	},
 	
 	// Sets mapWidth value to use in sizing initial map and on window resize
 	setMapWidth() {
@@ -69,7 +64,6 @@ export default Ember.Component.extend({
 				.on("click", function(){
 					let stateName = this.__data__.properties.name;
 					window.location = 'breweries/state?state=' + stateName;
-					console.log(stateName);
 				})
 
 		});
