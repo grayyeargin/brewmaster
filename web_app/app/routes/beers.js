@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     	beers: this.get('store').query('beer', {
     		limit: 50
     	}),
-    	styles: this.get('store').findAll('style')
+    	styles: this.get('store').query('style', {})
     })
   }
 });

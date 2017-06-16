@@ -15,36 +15,31 @@ mongoose.connect(config.db.uri);
 const Brewery = require('./api/models/brewery')
 const Beer = require('./api/models/beer')
 const Style = require('./api/models/style')
+const User = require('./api/models/user')
 
 var $, // Requested pages DOM
     url;
 
 
-Style.find({}).exec(function(err, styles){
-	for (let style of styles) {
-		Beer.find({styleName: style.name}).exec(function(err, beers) {
-			if (!err) {
-				for (let beer of beers) {
-					beer.style = style._id
-					beer.save()
-					// if (!style.beers) {
-					// 	style.beers = []
-					// }
-					style.beers.push(beer._id)
-					style.save()
-				}
-			} else {
-				console.log('Error for ' + style.name + ' ' + err)
-			}
-		})
-	}
-})
-
-
-
-
-
-
+// Style.find({}).exec(function(err, styles){
+// 	for (let style of styles) {
+// 		Beer.find({styleName: style.name}).exec(function(err, beers) {
+// 			if (!err) {
+// 				for (let beer of beers) {
+// 					beer.style = style._id
+// 					beer.save()
+// 					// if (!style.beers) {
+// 					// 	style.beers = []
+// 					// }
+// 					style.beers.push(beer._id)
+// 					style.save()
+// 				}
+// 			} else {
+// 				console.log('Error for ' + style.name + ' ' + err)
+// 			}
+// 		})
+// 	}
+// })
 
 
 

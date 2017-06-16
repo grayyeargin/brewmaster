@@ -13,6 +13,7 @@ mongoose.Promise = global.Promise;
 
 // Connect to db
 mongoose.connect(config.db.uri);
+app.set('superSecret', config.secret);
 
 // configure app to use bodyParser()
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -39,6 +40,7 @@ router.get('/', function(req, res) {
 router.use('/breweries', require ('./api/routes/brewery'));
 router.use('/beers', require ('./api/routes/beer'));
 router.use('/styles', require ('./api/routes/style'));
+router.use('/users', require ('./api/routes/user'));
 router.use('/news', require ('./api/routes/news'));
 
 // REGISTER OUR ROUTES -------------------------------
