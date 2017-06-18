@@ -9,11 +9,15 @@ var app        = express();
 var bodyParser = require('body-parser');
 var config     = require('./config');
 var mongoose   = require('mongoose');
+var cors = require('cors');
 mongoose.Promise = global.Promise;
 
 // Connect to db
 mongoose.connect(config.db.uri);
 app.set('superSecret', config.secret);
+
+// Use CORS module to allow cors requests
+app.use(cors())
 
 // configure app to use bodyParser()
 app.use(bodyParser.urlencoded({ extended: true }));

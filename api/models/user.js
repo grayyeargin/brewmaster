@@ -16,6 +16,7 @@ const UserSchema = new mongoose.Schema({
     	min: 6
     },
     admin: Boolean,
+    profileImg: String,
     likedBeers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Beer' }]
 });
 

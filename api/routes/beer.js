@@ -13,10 +13,10 @@ router.get('/', function (req, res) {
 	let q = Beer.find(queryObj)
 		// .populate('_brewery', 'name').populate('style', 'name')
 		
-		if (req.query.limit) q = q.limit(req.query.limit);
+		if (req.query.limit) q = q.limit(parseInt(req.query.limit));
 
 		q.exec(function(err, beers) {
-			if (err) res.json(err)
+			if (err) return res.json(err)
 			res.json(beers)
 		})
 })

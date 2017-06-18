@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// BREWERY MODEL
+// STYLE MODEL
 const Style = require('../models/style')
 
 // ALL
